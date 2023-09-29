@@ -1,28 +1,38 @@
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
+
 function Home() {
   const cardDataArray = [
     {
       title: "Counter",
       description: "A beautiful Counter App.",
       image: "/counter.jpeg",
-      tags: ['counter' ],
+      tags: ["counter"],
     },
     {
       title: "Password Generator",
       description: "A great password generator.",
       image: "/passwordgen.jpeg",
-      tags: ['encryption', 'generator','copy' ],
+      tags: ["encryption", "generator", "copy"],
+    },
+    {
+      title: "Currency Converter",
+      description: "A Currency Converter App. ",
+      image: "/currency.jpeg",
+      tags: ["currency", "json", "api", "fetch"],
     },
     // Add more card data objects as needed
   ]
   return (
     <div>
-      <Navbar />
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-      <div className='flex flex-wrap '>
+      <div className=' bg-slate-700 mb-4'>
+        <p className='text-4xl text-center py-4 md:text-6xl font-extrabold bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient'>
+          React Projects
+        </p>
+      </div>
+      <div className='flex flex-wrap p-4 '>
         {cardDataArray.map((cardData, index) => (
-          <Card 
+          <Card
             key={index}
             title={cardData.title}
             description={cardData.description}

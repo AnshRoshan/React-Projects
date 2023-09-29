@@ -5,16 +5,17 @@ import Contact from "./pages/Contact"
 import Error from "./pages/Error"
 import Counter from "./projects/Counter"
 import PassGen from "./projects/PassGen"
-
+import Currency from "./projects/Currency"
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-      < Route path="/counter" element={<Counter />} />
-      <Route path="/PassGen" element={<PassGen />} />
-      <Route path="*" element={<Error />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/about' element={<About />} />
+      <Route path='/contact' element={<Contact />} />
+      <Route path='/counter' element={<Counter />} />
+      <Route path='/currency' element={<Currency />} />
+      <Route path='/PassGen' element={<PassGen />} />
+      <Route path='*' element={<Error />} />
     </Routes>
   )
 }
