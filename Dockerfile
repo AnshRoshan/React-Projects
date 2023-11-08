@@ -3,7 +3,7 @@
 # build the vite app
 FROM node:alpine as builder
 
-WORKDIR /buildapp
+WORKDIR /app
 
 COPY package.json .
 
@@ -11,19 +11,21 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "run", "build"]
+RUN npm run build 
+
 
 
 # production environment
-FROM nginx:stable-alpine
+FROM nginx:stable-alpine as production-stage
 
 WORKDIR /usr/share/nginx/html
 
 RUN rm -rf ./*
 
-COPY --from=builder /buildapp/dist .
+COPY --from=builder /app/dist .
 
 EXPOSE 80
+
 
 CMD ["nginx", "-g", "daemon off;"]
 

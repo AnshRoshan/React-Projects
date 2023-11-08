@@ -17,5 +17,5 @@ jobs:
       - name: Build Image and Publish On GHCR
         run: |
           docker login --username anshroshan --password ${{secrets.PATOKEN}} ghcr.io
-          docker build . --tag ghcr.io/anshroshan/react-project-ghcr@latest
-          docker push ghcr.io/anshroshan/react-project-ghcr@latest
+          docker build -t ghcr.io/anshroshan/react-project-ghcr:latest . 
+          docker push ghcr.io/anshroshan/react-project-ghcr:latest
