@@ -8,18 +8,21 @@ function Home() {
       description: "A beautiful Counter App.",
       image: "/counter.jpeg",
       tags: ["counter"],
+      link:"/counter",
     },
     {
       title: "Password Generator",
       description: "A great password generator.",
       image: "/passwordgen.jpeg",
       tags: ["encryption", "generator", "copy"],
+      link:"/PassGen",
     },
     {
       title: "Currency Converter",
       description: "A Currency Converter App. ",
       image: "/currency.jpeg",
       tags: ["currency", "json", "api", "fetch"],
+      link:"/currency",
     },
     // Add more card data objects as needed
   ]
@@ -38,6 +41,7 @@ function Home() {
             description={cardData.description}
             image={cardData.image}
             tags={cardData.tags}
+            link={cardData.link}
           />
         ))}
       </div>
