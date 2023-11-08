@@ -1,0 +1,22 @@
+name: Docker Image CI for GHCR
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+jobs:
+ build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Github Checkout
+        uses: actions/checkout@v3
+      - name: Build Image and Publish On GHCR
+        run: |
+          docker login --username anshroshan --password ${{secret.PATOKEN}} ghcr.io
+          docker build --tag ghcr.io/anshroshan/react-project-ghcr@latest
+          docker push ghcr.io/anshroshan/react-project-ghcr@latest
+
