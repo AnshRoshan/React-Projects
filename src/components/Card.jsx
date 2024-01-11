@@ -2,9 +2,9 @@ import { Link } from "react-router-dom"
 
 function Card({ title, description, image, tags,link}) {
   return (
-    <Link to={`${link}`}  className='max-w-sm overflow-hidden shadow-lg bg-slate-400 mr-10 w-1/4 rounded-xl '>
+    <Link to={`${link}`}  className='min-w-lg overflow-hidden shadow-lg bg-slate-400 mr-10 rounded-xl '>
       <div>
-        <img className='w-[90%] m-[5%] rounded-2xl' src={`${image}`} alt='Sunset in the mountains' />
+        <img className='w-96 m-4 rounded-2xl' src={`${image}`} alt='Sunset in the mountains' />
         <div className='px-6 py-4'>
           <div className='font-bold text-xl mb-2'>{title}</div>
           <p className='text-gray-700 text-base'>{description}</p>
