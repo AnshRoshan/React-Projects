@@ -1,4 +1,4 @@
-import React, { useId } from "react"
+import React, { useId } from 'react'
 
 function InputBox({
   label,
@@ -6,15 +6,15 @@ function InputBox({
   onAmountChange,
   onCurrencyChange,
   currencyOptions = [],
-  selectCurrency = "usd",
+  selectCurrency = 'usd',
   amountDisable = false,
   currencyDisable = false,
-  className = "",
+  className = '',
 }) {
   const amountInputId = useId()
 
   return (
-    <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>
+    <div className={`bg-black/30 p-3 rounded-lg text-sm md:text-md xl:text-xl flex ${className}`}>
       <div className='w-1/2'>
         <label htmlFor={amountInputId} className='text-black/40 mb-2 inline-block'>
           {label}
@@ -27,7 +27,7 @@ function InputBox({
           placeholder='Amount'
           disabled={amountDisable}
           value={amount}
-          onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
+          onChange={e => onAmountChange && onAmountChange(Number(e.target.value))}
         />
         <datalist id='Multiple' className='bg-teal-800/50'>
           <option value='100' className='bg-sky-800/50'>
@@ -44,10 +44,10 @@ function InputBox({
         <select
           className='rounded-lg px-1 py-1 bg-gray-100 cursor-pointer outline-none'
           value={selectCurrency}
-          onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
+          onChange={e => onCurrencyChange && onCurrencyChange(e.target.value)}
           disabled={currencyDisable}
         >
-          {currencyOptions.map((currency) => (
+          {currencyOptions.map(currency => (
             <option key={currency} value={currency}>
               {currency}
             </option>

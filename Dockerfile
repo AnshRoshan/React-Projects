@@ -24,6 +24,10 @@ RUN rm -rf ./*
 
 COPY --from=builder /app/dist .
 
+RUN mkdir -p /usr/share/nginx/html/React-Projects/
+ 
+RUN cp -r /usr/share/nginx/html/* /usr/share/nginx/html/React-Projects/
+
 EXPOSE 80
 
 

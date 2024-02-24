@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // vite.config.js
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/testing/' : '/'
+  base: process.env.NODE_ENV === 'production' ? '/React-Projects/' : '/',
 })

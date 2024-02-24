@@ -1,11 +1,12 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
+import { IoMdArrowRoundBack } from "react-icons/io";
 function Error() {
   return (
-    <>
+    <div className="h-screen flex flex-col">
       <Navbar />
-      <div className='w-full h-screen flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0'>
+      <div className='w-full h-screen flex-grow flex flex-col lg:flex-row items-center justify-center space-y-16 lg:space-y-0 space-x-8 2xl:space-x-0'>
         <div className='w-full lg:w-1/2 flex flex-col items-center justify-center lg:px-2 xl:px-0 text-center'>
           <p className='text-7xl md:text-8xl lg:text-9xl font-bold tracking-wider text-gray-300'>
             404
@@ -21,18 +22,7 @@ function Error() {
             to='/'
             className='flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-gray-100 px-4 py-2 rounded transition duration-150'
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              className='h-5 w-5'
-              viewBox='0 0 20 20'
-              fill='currentColor'
-            >
-              <path
-                fill-rule='evenodd'
-                d='M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z'
-                clip-rule='evenodd'
-              ></path>
-            </svg>
+            <IoMdArrowRoundBack />
             <span>Return Home</span>
           </Link>
         </div>
@@ -42,7 +32,6 @@ function Error() {
             xmlns='http://www.w3.org/2000/svg'
             data-name='Layer 1'
             viewBox='0 0 1120.59226 777.91584'
-            xmlns:xlink='http://www.w3.org/1999/xlink'
           >
             <title>not found</title>
             <circle cx='212.59226' cy='103' r='64' fill='#ff6584'></circle>
@@ -222,7 +211,7 @@ function Error() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   )
 }
 export default Error
