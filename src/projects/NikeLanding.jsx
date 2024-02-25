@@ -1,10 +1,11 @@
+import { amazon, brandlogo, flipkart, shoe } from "../assets";
 const NikeLanding = () => {
 
   return (
     <div className="font-poppins bg-white">
       <nav className="flex h-[72px]  items-center justify-between p-1 px-[8.33%]">
         <div className="logo">
-          <img src="/brand_logo.png" alt="Logo Of Nike" />
+          <img src={brandlogo} alt="Logo Of Nike" />
         </div>
         <ul className="flex items-center space-x-4">
           <li>
@@ -51,13 +52,13 @@ const NikeLanding = () => {
               <div className="space-y-4">
                 <p className=" text-[#5A5959]">Also avaliable on </p>
                 <div className="flex space-x-[40px]">
-                  <img src="/flipkart.png" alt="flippkart" />
-                  <img src="/amazon.png" alt="amazon" />
+                  <img src={flipkart} alt="flippkart" />
+                  <img src={amazon} alt="amazon" />
                 </div>
               </div>
             </div>
           </div>
-          <img className="h-[530px] " src="/shoe_image.png" alt="shoe Image" />
+          <img className="h-[530px] " src={shoe} alt="shoe Image" />
         </div>
       </div>
     </div>

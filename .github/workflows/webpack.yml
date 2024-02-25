@@ -2,7 +2,7 @@ name: Deploy static content to Pages
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
   workflow_dispatch:
 
@@ -11,48 +11,45 @@ permissions:
   pages: write
   id-token: write
 
-concurrency: 
-  group: 'pages'
+concurrency:
+  group: "pages"
   cancel-in-progress: true
 
 jobs:
-
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/checkout@v2
-    
-    - uses: pnpm/action-setup@v2.2.4
-      with:
-        version: 7
-    
-    - run: |
-        pnpm install --no-frozen-lockfile
-        pnpm install
-    
-    - run: pnpm run build
-    
-    - name: Build
-      run: pnpm run build
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 7
 
-    - name: Setup Pages
-      uses: actions/configure-pages@v2
-        
-      env:
+      - run: |
+          pnpm install --no-frozen-lockfile
+          pnpm install
+
+      - run: pnpm run build
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+        env:
           PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
-      
 
-    - name: Upload artifact  
-      uses: actions/upload-pages-artifact@v1
-      with:
-        path: './dist'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist"
 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

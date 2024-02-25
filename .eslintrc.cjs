@@ -17,13 +17,4 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
-  overrides: [
-    {
-      files: ["*.jsx"],
-      rules: {
-        "react/prop-types": "off",
-        "react/react-in-jsx-scope": "off",
-      },
-    },
-  ],
 };

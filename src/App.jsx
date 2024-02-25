@@ -18,9 +18,7 @@ function App() {
       <Route path='/color' element={<Color />} />
       <Route path='/error' element={<Error />} />
       <Route path='/nike' element={<NikeLanding />} />
-      <Route path='/nike' element={<NikeLanding />} />
       <Route path='/project' element={<Project />} />
-
       <Route path='*' element={<Error />} />
     </Routes>
   )

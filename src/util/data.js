@@ -1,3 +1,59 @@
+import { counter, currency, passwordgen } from "../assets";
+
+export const projects = [
+  {
+    title: "Counter",
+    description: "A beautiful Counter App.",
+    image: counter,
+    tags: ["counter"],
+    link: "/counter",
+  },
+  {
+    title: "Password Generator",
+    description: "A great password generator.",
+    image: passwordgen,
+    tags: ["encryption", "generator", "copy"],
+    link: "/passgen",
+  },
+  {
+    title: "Currency Converter",
+    description: "A Currency Converter App. ",
+    image: currency,
+    tags: ["currency", "json", "api", "fetch"],
+    link: "/currency",
+  },
+  {
+    title: "Accordion",
+    description: "A Currency Converter App. ",
+    image: currency,
+    tags: ["accordion"],
+    link: "/accordion",
+  },
+  {
+    title: "Calculator",
+    description: "A Calculator App.",
+    image: counter,
+    tags: ["calculator"],
+    link: "/calculator",
+  },
+  {
+    title: "Discord",
+    description: "A Calculator App.",
+    image: counter,
+    tags: ["discord"],
+    link: "/discord",
+  },
+  {
+    title: "Color Generator",
+    description: "A Color Generator App.",
+    image: counter,
+    tags: ["color"],
+    link: "/color",
+  },
+];
+// Path: src/util/data.js
+// Compare this snippet from src/pages/Project.jsx:
+
 export const data = [
   {
     id: "1",
@@ -25,57 +81,3 @@ export const data = [
   },
 ];
 // Compare this snippet from src/projects/Accordion.jsx:
-
-export const projects = [
-  {
-    title: "Counter",
-    description: "A beautiful Counter App.",
-    image: "/counter.jpeg",
-    tags: ["counter"],
-    link: "/counter",
-  },
-  {
-    title: "Password Generator",
-    description: "A great password generator.",
-    image: "/passwordgen.jpeg",
-    tags: ["encryption", "generator", "copy"],
-    link: "/passgen",
-  },
-  {
-    title: "Currency Converter",
-    description: "A Currency Converter App. ",
-    image: "/currency.jpeg",
-    tags: ["currency", "json", "api", "fetch"],
-    link: "/currency",
-  },
-  {
-    title: "Accordion",
-    description: "A Currency Converter App. ",
-    image: "/currency.jpeg",
-    tags: ["accordion"],
-    link: "/accordion",
-  },
-  {
-    title: "Calculator",
-    description: "A Calculator App.",
-    image: "/counter.jpeg",
-    tags: ["calculator"],
-    link: "/calculator",
-  },
-  {
-    title: "Discord",
-    description: "A Calculator App.",
-    image: "/counter.jpeg",
-    tags: ["discord"],
-    link: "/discord",
-  },
-  {
-    title: "Color Generator",
-    description: "A Color Generator App.",
-    image: "/counter.jpeg",
-    tags: ["color"],
-    link: "/color",
-  },
-];
-// Path: src/util/data.js
-// Compare this snippet from src/pages/Project.jsx:

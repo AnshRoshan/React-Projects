@@ -24,9 +24,9 @@ RUN rm -rf ./*
 
 COPY --from=builder /app/dist .
 
-RUN mkdir -p /usr/share/nginx/html/React-Projects/
+RUN mkdir -p /usr/share/nginx/html/React-Projects/assets
  
-RUN cp -r /usr/share/nginx/html/* /usr/share/nginx/html/React-Projects/
+RUN cp -r /usr/share/nginx/html/assets/* /usr/share/nginx/html/React-Projects/
 
 EXPOSE 80
 
