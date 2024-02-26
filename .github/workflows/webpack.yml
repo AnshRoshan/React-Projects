@@ -34,8 +34,6 @@ jobs:
           pnpm install --no-frozen-lockfile
           pnpm install
 
-      - run: pnpm run build
-
       - name: Build
         run: pnpm run build
 
