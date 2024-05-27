@@ -60,6 +60,30 @@ _Description: A Color Generator App._
 
 ![Project 7 Screenshot](/src/assets/counter.jpeg)
 
+<!--
+### 2. [Project Name 2](/projects/project-name-2)
+
+_Description: A brief description of the second project._
+
+![Project 2 Screenshot](/projects/project-name-2/screenshot.png)
+
+### 3. [Project Name 3](/projects/project-name-3)
+
+_Description: A brief description of the third project._
+
+![Project 3 Screenshot](/projects/project-name-3/screenshot.png)
+
+...
+
+### N. [Project Name N](/projects/project-name-N)
+
+_Description: A brief description of the Nth project._
+
+![Project N Screenshot](/projects/project-name-N/screenshot.png)
+
+Each project directory contains its source code, detailed documentation, and a screenshot to give you a glimpse of what it looks like.
+-->
+
 ## Getting Started
 
 To get started with any of the projects in this collection, follow these steps:
@@ -125,7 +149,7 @@ Once Node.js and pnpm are installed and verified, you're ready to set up and run
 
 - install all the dependency
 
-  ```js
+  ```
   pnpm i
   ```
 
@@ -143,7 +167,7 @@ Once Node.js and pnpm are installed and verified, you're ready to set up and run
 
 ### 6. Create a `.env.local` File:
 
-- Create a `.env.local` file in the directory and add the following environment variables:
+- Create a `.env.local` file in the Chalchitra-Backend directory and add the following environment variables:
 
   ```
 

@@ -8,6 +8,7 @@ export default {
       // font-family: 'Poppins', sans-serif; in classname poppins
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        sans: ['Open Sans', 'sans-serif'],
       },
       colors: {
         accent: "rgba(var(--accent))",
@@ -17,6 +18,23 @@ export default {
         text: "rgba(var(--text))",
         background: "rgba(var(--background))",
       },
+      keyframes: {
+        spin: {
+          '0%, 100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        spin: 'spin 1s linear infinite',
+      },
+
+    },
+  },
+  // Add custom utility class
+  utilities: {
+    '.centered': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   },
   plugins: [],

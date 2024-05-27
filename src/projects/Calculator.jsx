@@ -1,135 +1,153 @@
-import React, { useState } from 'react'
+import { evaluate } from "mathjs";
+import { useEffect, useState } from "react";
+
+function Button({ className, onClick, children }) {
+  return (
+    <button className={className} onClick={onClick}>
+      {children}
+    </button>
+  );
+}
 
 function Calculator() {
-  const box = ' h-16 w-16 text-white bg-white/10 shadow-cyan-500/80 shadow-inner font-bold text-2xl rounded-xl'
-  const [expression, setExpression] = useState('0')
-  const [result, setResult] = useState('0')
-  const [calculated, setCalculated] = useState(false)
+  const box =
+    "h-16 w-20 text-white bg-white/10 shadow-emerald-200 shadow-inner  font-bold text-3xl rounded-xl border border-emerald-500 ";
+  const [expression, setExpression] = useState("0");
+  const [result, setResult] = useState("0");
+  const [calculated, setCalculated] = useState(false);
 
   function handleAllclear() {
-    setExpression('0')
-    setResult('0')
-    setCalculated(false)
+    setExpression("0");
+    setResult("0");
+    setCalculated(false);
   }
 
   function handleDelete() {
-    setExpression(prevExpression => {
-      if (prevExpression === '0') {
-        return prevExpression
+    setExpression((prevExpression) => {
+      if (prevExpression === "0") {
+        return prevExpression;
       } else {
-        return prevExpression.slice(0, -1) || '0'
+        return prevExpression.slice(0, -1) || "0";
       }
-    })
+    });
   }
 
-  function handleNumber(event) {
-    const numberClicked = event.target.innerText
+  function handleNumber(numberClicked) {
     if (calculated) {
-      setExpression(numberClicked)
-      setCalculated(false)
+      setExpression(numberClicked);
+      setCalculated(false);
     } else {
-      setExpression(prevExpression => {
-        if (prevExpression === '0') {
-          return numberClicked
+      setExpression((prevExpression) => {
+        if (prevExpression === "0") {
+          return numberClicked;
         } else {
-          return prevExpression + numberClicked
+          return prevExpression + numberClicked;
         }
-      })
+      });
     }
   }
 
-  function handleOperator(event) {
-    const operatorClicked = event.target.innerText
-    setExpression(prevExpression => {
-      const lastCharacter = prevExpression.slice(-1)
-      if (['+', '-', '*', '/'].includes(lastCharacter)) {
-        return prevExpression.slice(0, -1) + operatorClicked
+  function handleOperator(operatorClicked) {
+    setExpression((prevExpression) => {
+      const lastCharacter = prevExpression.slice(-1);
+      if (["+", "-", "*", "/"].includes(lastCharacter)) {
+        return prevExpression.slice(0, -1) + operatorClicked;
       } else {
-        return prevExpression + operatorClicked
+        return prevExpression + operatorClicked;
       }
-    })
-    setCalculated(false)
+    });
+    setCalculated(false);
   }
 
   function handleEqual() {
     try {
-      setResult(eval(expression).toString())
+      setExpression((prevExpression) => {
+        return prevExpression.replace(/[+\-*/]+$/, "");
+      });
+      const evaluatedResult = evaluate(expression);
+      // Rounding to 7 decimal places
+      const roundedResult = Math.round(evaluatedResult * 1e7) / 1e7;
+      setResult(roundedResult.toString());
     } catch (error) {
-      setResult('Error')
+      setResult("Error");
     }
-    setCalculated(true)
+    setCalculated(true);
   }
 
   return (
-    <div className='bg-gradient-to-r from-indigo-500 from-30% via-sky-500 via-60% to-emerald-500 to-80% h-screen flex items-center justify-center gap-12'>
-      <div className='rounded-xl bg-black p-4 shadow-inner '>
-        <div className='h-24  bg-indigo-500/70 rounded-xl p-3 mb-4 text-right font-bold flex flex-col'>
-          <div className=' underline underline-offset-2'>{expression}</div>
-          <div className='min-h-40 w-full text-5xl  flex-grow'>{calculated ? result : expression}</div>
+    <div className="flex min-h-dvh items-center justify-center gap-12 bg-gradient-to-r from-indigo-500 from-30% via-sky-500 via-60% to-emerald-500 to-80%">
+      <div className="rounded-xl bg-black p-4 shadow-inner">
+        <div className="mb-4 flex h-28 flex-col items-end justify-between rounded-xl bg-indigo-300 p-3 text-right font-semibold">
+          <div className="text-xl text-gray-900 underline underline-offset-2">
+            {expression}
+          </div>
+          <div className="justify-end text-5xl font-bold">
+            {calculated ? result : expression}
+          </div>
         </div>
-        <div className=''>
-          <div className='grid bg-gradient-to-r from-indigo-500 to-sky-500 backdrop-blur-2xl p-3 rounded-lg grid-cols-4 gap-4'>
-            <button className={`${box}`}>{'<->'}</button>
-            <button className={`${box}`}>%</button>
-            <button className={`${box}`} onClick={handleAllclear}>
+        <div className="">
+          <div className="grid grid-cols-4 gap-4 rounded-lg bg-purple-950 p-2 backdrop-blur-2xl">
+            <Button className={box}>{"<->"}</Button>
+            <Button className={box}>%</Button>
+            <Button className={box} onClick={handleAllclear}>
               AC
-            </button>
-            <button className={`${box}`} onClick={handleDelete}>
+            </Button>
+            <Button className={box} onClick={handleDelete}>
               C
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              7
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              8
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              9
-            </button>
-            <button className={`${box}`} onClick={handleOperator}>
+            </Button>
+            {[7, 8, 9].map((number) => (
+              <Button
+                key={number}
+                className={box}
+                onClick={() => handleNumber(number.toString())}
+              >
+                {number}
+              </Button>
+            ))}
+            <Button className={box} onClick={() => handleOperator("/")}>
               /
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              4
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              5
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              6
-            </button>
-            <button className={`${box}`} onClick={handleOperator}>
+            </Button>
+            {[4, 5, 6].map((number) => (
+              <Button
+                key={number}
+                className={box}
+                onClick={() => handleNumber(number.toString())}
+              >
+                {number}
+              </Button>
+            ))}
+            <Button className={box} onClick={() => handleOperator("*")}>
               *
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              1
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              2
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
-              3
-            </button>
-            <button className={`${box}`} onClick={handleOperator}>
+            </Button>
+            {[1, 2, 3].map((number) => (
+              <Button
+                key={number}
+                className={box}
+                onClick={() => handleNumber(number.toString())}
+              >
+                {number}
+              </Button>
+            ))}
+            <Button className={box} onClick={() => handleOperator("-")}>
               -
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
+            </Button>
+            <Button className={box} onClick={() => handleNumber(".")}>
               .
-            </button>
-            <button className={`${box}`} onClick={handleNumber}>
+            </Button>
+            <Button className={box} onClick={() => handleNumber("0")}>
               0
-            </button>
-            <button className={`${box}`} onClick={handleEqual}>
+            </Button>
+            <Button className={box} onClick={handleEqual}>
               =
-            </button>
-            <button className={`${box}`} onClick={handleOperator}>
+            </Button>
+            <Button className={box} onClick={() => handleOperator("+")}>
               +
-            </button>
+            </Button>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Calculator
+export default Calculator;

@@ -1,4 +1,4 @@
-## Contributing to the React Projects Collection
+# Contributing to the React Projects Collection
 
 Thank you for considering contributing to the React Projects Collection! By participating in this project, you help make it better and empower others in the React community to learn and grow. Here's how you can contribute:
 
