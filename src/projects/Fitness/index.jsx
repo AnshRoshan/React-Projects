@@ -2,6 +2,7 @@ import { useState } from "react";
 import Generator from "./components/Generator";
 import Hero from "./components/Hero";
 import Workout from "./components/Workout";
+import { generateWorkout } from "./util/function";
 
 function Fitness() {
   const [workout, setWorkout] = useState(null);
@@ -30,7 +31,7 @@ function Fitness() {
         setGoal={setGoal}
         updateWorkout={updateWorkout}
       />
-      <Workout />
+      {workout && (<Workout workout={workout} />)}
     </div>
   );
 }

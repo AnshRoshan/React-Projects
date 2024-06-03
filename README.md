@@ -22,56 +22,51 @@ React is a powerful JavaScript library for building user interfaces. This reposi
 
 _Description: A beautiful Counter App._
 
-![Project 1 Screenshot](/src/assets/counter.jpeg)
+![Project 1 Screenshot](https://images.pexels.com/photos/1329295/pexels-photo-1329295.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&dpr=1)
 
 ### 2. [Password Generator](/src/projects/PasswordGenerator/)
 
 _Description: A great password generator._
 
-![Project 2 Screenshot](/src/assets/passwordgen.jpeg)
+![Project 2 Screenshot](https://images.pexels.com/photos/2882630/pexels-photo-2882630.jpeg?auto=compress&cs=tinysrgb&w=600)
 
 ### 3. [Currency Converter](/src/projects/CurrencyConverter/)
 
 _Description: A Currency Converter App._
 
-![Project 3 Screenshot](/src/assets/currency.jpeg)
+![Project 3 Screenshot](https://images.pexels.com/photos/4386158/pexels-photo-4386158.jpeg?auto=compress&cs=tinysrgb&h=500&dpr=1)
 
 ### 4. [Accordion](/src/projects/Accordion/)
 
 _Description: An Accordion App._
 
-![Project 4 Screenshot](/src/assets/currency.jpeg)
+![Project 4 Screenshot](https://images.pexels.com/photos/8520147/pexels-photo-8520147.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
 
 ### 5. [Calculator](/src/projects/Calculator/)
 
 _Description: A Calculator App._
 
-![Project 5 Screenshot](/src/assets/counter.jpeg)
+![Project 5 Screenshot](https://images.pexels.com/photos/4386326/pexels-photo-4386326.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
 
-### 6. [Discord](/src/projects/Discord/)
-
-_Description: A Discord App._
-
-![Project 6 Screenshot](/src/assets/counter.jpeg)
-
-### 7. [Color Generator](/src/projects/ColorGenerator/)
+### 6. [Color Generator](/src/projects/ColorGenerator/)
 
 _Description: A Color Generator App._
 
-![Project 7 Screenshot](/src/assets/counter.jpeg)
+![Project 6 Screenshot](https://images.pexels.com/photos/977246/pexels-photo-977246.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
+
+### 7. [Nasa API ](/src/projects/Nasa/)
+
+_Description: A Nasa API App._
+
+![Project 7 Screenshot](https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=600&h=500&dpr=1)
+
+### 8. [Fitness APP](/src/projects/Fitness/)
+
+_Description: A Fitness App._
+
+![Project 8 Screenshot](https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
 
 <!--
-### 2. [Project Name 2](/projects/project-name-2)
-
-_Description: A brief description of the second project._
-
-![Project 2 Screenshot](/projects/project-name-2/screenshot.png)
-
-### 3. [Project Name 3](/projects/project-name-3)
-
-_Description: A brief description of the third project._
-
-![Project 3 Screenshot](/projects/project-name-3/screenshot.png)
 
 ...
 
