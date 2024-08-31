@@ -18,7 +18,7 @@ function Hero() {
             window.location.href = "#generate";
           }}
           text={"Accept & Begin"}
-        ></Button>
+        />
       </div>
     </>
   );

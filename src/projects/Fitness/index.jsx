@@ -14,7 +14,7 @@ function Fitness() {
     if (muscles.length < 1) {
       return;
     }
-    let newWorkout = generateWorkout({ poison, muscles, goal });
+    const newWorkout = generateWorkout({ poison, muscles, goal });
     setWorkout(newWorkout);
 
     window.location.href = "#workout";

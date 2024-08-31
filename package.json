@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@million/lint": "^1.0.0-rc.84",
     "mathjs": "^12.4.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -17,6 +18,7 @@
     "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.2.1",

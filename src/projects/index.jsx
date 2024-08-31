@@ -4,20 +4,20 @@ import Color from "./Color";
 import Counter from "./Counter";
 import Currency from "./Currency";
 import Discord from "./Discord";
-import PassGen from "./PassGen";
-import NikeLanding from "./NikeLanding";
 import Fitness from "./Fitness";
 import Nasa from "./NASA";
+import NikeLanding from "./NikeLanding";
+import PassGen from "./PassGen";
 
 export {
-  Accordion,
-  Calculator,
-  Color,
-  Counter,
-  Currency,
-  Discord,
-  PassGen,
-  NikeLanding,
-  Fitness,
-  Nasa,
+	Accordion,
+	Calculator,
+	Color,
+	Counter,
+	Currency,
+	Discord,
+	PassGen,
+	NikeLanding,
+	Fitness,
+	Nasa,
 };

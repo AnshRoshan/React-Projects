@@ -101,7 +101,7 @@ export default function Generator({
           <p className="capitalize">
             {muscles.length == 0 ? "Select muscle groups" : muscles.join(" ")}
           </p>
-          <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2"></i>
+          <i className="fa-solid fa-caret-down absolute right-3 top-1/2 -translate-y-1/2" />
         </button>
         {showModal && (
           <div className="flex flex-col px-3 pb-3">
@@ -152,7 +152,7 @@ export default function Generator({
           );
         })}
       </div>
-      <Button func={updateWorkout} text={"Formulate"}></Button>
+      <Button func={updateWorkout} text={"Formulate"} />
     </SectionWrapper>
   );
 }

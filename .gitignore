@@ -30,3 +30,6 @@ dist-ssr
 *.env.d/*
 *.env.*
 !.env.example
+
+# Million Lint
+.million

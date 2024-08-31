@@ -5,8 +5,8 @@ export function generateWorkout(args) {
   const { muscles, poison: workout, goal } = args;
   let exer = Object.keys(exercises);
   exer = exer.filter((key) => exercises[key].meta.environment !== "home");
-  let includedTracker = [];
-  let numSets = 5;
+  const includedTracker = [];
+  const numSets = 5;
   let listOfMuscles;
 
   if (workout === "individual") {
@@ -16,14 +16,14 @@ export function generateWorkout(args) {
   }
 
   listOfMuscles = new Set(shuffleArray(listOfMuscles));
-  let arrOfMuscles = Array.from(listOfMuscles);
-  let scheme = goal;
-  let sets = SCHEMES[scheme].ratio
+  const arrOfMuscles = Array.from(listOfMuscles);
+  const scheme = goal;
+  const sets = SCHEMES[scheme].ratio
     .reduce((acc, curr, index) => {
       //make this compound and exercise muscle -> array of objects and destructure in loop
       return [
         ...acc,
-        ...[...Array(parseInt(curr)).keys()].map((val) =>
+        ...[...Array(Number.parseInt(curr)).keys()].map((val) =>
           index === 0 ? "compound" : "accessory",
         ),
       ];
@@ -82,7 +82,7 @@ export function generateWorkout(args) {
       setType === "compound" ? accessoryExercises : compoundExercises,
     ).filter((val) => !includedTracker.includes(val));
 
-    let randomExercise =
+    const randomExercise =
       filteredDataList[Math.floor(Math.random() * filteredDataList.length)] ||
       filteredOppList[Math.floor(Math.random() * filteredOppList.length)];
 
@@ -107,13 +107,13 @@ export function generateWorkout(args) {
     if (exercises[randomExercise].unit === "reps") {
       const tempoSum = tempo
         .split(" ")
-        .reduce((acc, curr) => acc + parseInt(curr), 0);
-      if (tempoSum * parseInt(repsOrDuraction) > 85) {
+        .reduce((acc, curr) => acc + Number.parseInt(curr), 0);
+      if (tempoSum * Number.parseInt(repsOrDuraction) > 85) {
         repsOrDuraction = Math.floor(85 / tempoSum);
       }
     } else {
       //set to nearest 5 seconds
-      repsOrDuraction = Math.ceil(parseInt(repsOrDuraction) / 5) * 5;
+      repsOrDuraction = Math.ceil(Number.parseInt(repsOrDuraction) / 5) * 5;
     }
     includedTracker.push(randomExercise);
 
@@ -131,8 +131,8 @@ export function generateWorkout(args) {
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    let temp = array[i];
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
     array[i] = array[j];
     array[j] = temp;
   }
@@ -147,8 +147,8 @@ function exercisesFlattener(exercisesObj) {
       flattenedObj[key] = val;
     } else {
       for (const variant in val.variants) {
-        let variantName = variant + "_" + key;
-        let variantSubstitutes = Object.keys(val.variants)
+        const variantName = variant + "_" + key;
+        const variantSubstitutes = Object.keys(val.variants)
           .map((element) => {
             return element + " " + key;
           })
