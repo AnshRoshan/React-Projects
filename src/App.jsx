@@ -12,8 +12,10 @@ import {
 	Nasa,
 	NikeLanding,
 	PassGen,
+	Invoice,
+	Quiz,
+	ToDOList,
 } from "./projects";
-import ToDOList from "./projects/ToDOList";
 
 function App() {
 	return (
@@ -21,19 +23,21 @@ function App() {
 			<Route path="/" element={<Project />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/contact" element={<Contact />} />
-			<Route path="/counter" element={<Counter />} />
+			<Route path="/counter" element={<Counter />} />j
 			<Route path="/currency" element={<Currency />} />
 			<Route path="/passgen" element={<PassGen />} />
 			<Route path="/accordion" element={<Accordion />} />
 			<Route path="/calculator" element={<Calculator />} />
 			<Route path="/discord" element={<Discord />} />
 			<Route path="/color" element={<Color />} />
-			<Route path="/error" element={<ErrorPage />} />
+			<Route path="/error" element={<Error />} />
 			<Route path="/nike" element={<NikeLanding />} />
 			<Route path="/project" element={<Project />} />
 			<Route path="/todo" element={<ToDOList />} />
 			<Route path="/nasa" element={<Nasa />} />
 			<Route path="/fit" element={<Fitness />} />
+			<Route path="/quiz" element={<Quiz />} />
+			<Route path="/invoice" element={<Invoice />} />
 			<Route path="*" element={<Error />} />
 		</Routes>
 	);

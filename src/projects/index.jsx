@@ -6,8 +6,9 @@ import Currency from "./Currency";
 import Discord from "./Discord";
 import Fitness from "./Fitness";
 import Nasa from "./NASA";
-import NikeLanding from "./NikeLanding";
-import PassGen from "./PassGen";
+import Invoice from "./Invoice";
+import Quiz from "./Quiz";
+import ToDOList from "./ToDOList";
 
 export {
 	Accordion,
@@ -20,4 +21,7 @@ export {
 	NikeLanding,
 	Fitness,
 	Nasa,
+	Invoice,
+	Quiz,
+	ToDOList,
 };
