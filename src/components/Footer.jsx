@@ -6,18 +6,16 @@ import { Link } from "react-router-dom";
 
 function Footer() {
 	return (
-		<div className="flex max-h-36 flex-wrap items-center justify-between text-text">
+		<div className="flex max-h-36 flex-wrap items-center justify-between border-t-4 text-text">
 			<div className="w-auto p-8">
-				<a href="#projects">
-					<div className="inline-flex items-center">
-						<FaReact className="text-3xl" />
-						<Link to="/">
-							<span className="ml-4 animate-gradient bg-gradient-to-r from-10% from-indigo-500 via-30% via-sky-500 to-90% to-emerald-500 bg-clip-text py-4 text-center font-extrabold text-transparent text-xl md:text-2xl">
-								React Projects
-							</span>
-						</Link>
-					</div>
-				</a>
+				<div className="inline-flex items-center">
+					<FaReact className="text-3xl" />
+					<Link to="/">
+						<span className="ml-4 animate-gradient bg-gradient-to-r from-10% from-indigo-500 via-30% via-sky-500 to-90% to-emerald-500 bg-clip-text py-4 text-center font-extrabold text-transparent text-xl md:text-2xl">
+							React Projects
+						</span>
+					</Link>
+				</div>
 			</div>
 			<div className="w-auto p-8">
 				<ul className="-m-5 flex flex-wrap items-center space-x-12">

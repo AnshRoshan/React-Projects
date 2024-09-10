@@ -41,7 +41,7 @@ function About() {
 							Mon-Sat 9am to 5pm.
 						</p>
 						<p className="font-medium text-sm">
-							Sabour BHagalpur, Bihar 813210 IN
+							Sabour Bhagalpur, Bihar 813210 IN
 						</p>
 					</div>
 				</div>

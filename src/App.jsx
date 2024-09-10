@@ -9,12 +9,12 @@ import {
 	Currency,
 	Discord,
 	Fitness,
+	Invoice,
 	Nasa,
 	NikeLanding,
 	PassGen,
-	Invoice,
 	Quiz,
-	ToDOList,
+	TodoList,
 } from "./projects";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
 			<Route path="/error" element={<Error />} />
 			<Route path="/nike" element={<NikeLanding />} />
 			<Route path="/project" element={<Project />} />
-			<Route path="/todo" element={<ToDOList />} />
+			<Route path="/todo" element={<TodoList />} />
 			<Route path="/nasa" element={<Nasa />} />
 			<Route path="/fit" element={<Fitness />} />
 			<Route path="/quiz" element={<Quiz />} />

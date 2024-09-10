@@ -5,10 +5,12 @@ import Counter from "./Counter";
 import Currency from "./Currency";
 import Discord from "./Discord";
 import Fitness from "./Fitness";
-import Nasa from "./NASA";
 import Invoice from "./Invoice";
+import Nasa from "./NASA";
+import NikeLanding from "./NikeLanding";
+import PassGen from "./PassGen";
 import Quiz from "./Quiz";
-import ToDOList from "./ToDOList";
+import TodoList from "./Todo";
 
 export {
 	Accordion,
@@ -23,5 +25,5 @@ export {
 	Nasa,
 	Invoice,
 	Quiz,
-	ToDOList,
+	TodoList,
 };

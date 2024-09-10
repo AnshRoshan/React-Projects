@@ -24,7 +24,11 @@
 				}
 			},
 			"a11y": {
-				"useButtonType": "warn"
+				"useButtonType": "warn",
+				"noBlankTarget": {
+					"fix": "safe",
+					"level": "warn"
+				}
 			}
 		}
 	}

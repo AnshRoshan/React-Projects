@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import { amazon, brandlogo, flipkart, shoe } from "../assets";
+
 const NikeLanding = () => {
 	return (
 		<div className="bg-white font-poppins">
@@ -8,24 +10,24 @@ const NikeLanding = () => {
 				</div>
 				<ul className="flex items-center space-x-4">
 					<li>
-						<a href="/" className="font-semibold text-lg hover:text-gray-700">
+						<Link to="/" className="font-semibold text-lg hover:text-gray-700">
 							Menu
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="font-semibold text-lg hover:text-gray-700">
+						<Link to="/" className="font-semibold text-lg hover:text-gray-700">
 							Location
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="font-semibold text-lg hover:text-gray-700">
+						<Link to="/" className="font-semibold text-lg hover:text-gray-700">
 							About
-						</a>
+						</Link>
 					</li>
 					<li>
-						<a href="/" className="font-semibold text-lg hover:text-gray-700">
+						<Link to="/" className="font-semibold text-lg hover:text-gray-700">
 							Contact
-						</a>
+						</Link>
 					</li>
 				</ul>
 				<div className="login">

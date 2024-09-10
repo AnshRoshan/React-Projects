@@ -1,36 +1,31 @@
 {
-  "name": "react-projects",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --port 3000",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@million/lint": "^1.0.0-rc.84",
-    "mathjs": "^12.4.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1",
-    "react-router-dom": "^6.23.1"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.8.3",
-    "@types/react": "^18.3.2",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-plugin-react": "^7.34.2",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-react-refresh": "^0.4.7",
-    "postcss": "^8.4.38",
-    "prettier": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.4",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.3.0"
-  }
+	"name": "react-projects",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --port 3000",
+		"build": "vite build",
+		"lint": "biome check --write --unsafe src/ ",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"mathjs": "^13.1.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-icons": "^5.3.0",
+		"react-router-dom": "^6.26.1",
+		"recoil": "^0.7.7",
+		"swapy": "^0.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/react": "^18.3.5",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.44",
+		"tailwindcss": "^3.4.10",
+		"vite": "^5.4.3"
+	}
 }

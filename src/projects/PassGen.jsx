@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { FaClipboard } from "react-icons/fa";
 import { FaRepeat } from "react-icons/fa6";
+
 function PassGen() {
 	const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";

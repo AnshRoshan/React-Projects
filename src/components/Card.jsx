@@ -8,9 +8,9 @@ function Card({ title, description, image, tags, link }) {
 		>
 			<div>
 				<img
-					className="m-4 mx-auto h-36 max-w-[90%] rounded-2xl bg-cover "
+					className="m-4 mx-auto h-44 w-[90%] rounded-2xl bg-cover "
 					src={`${image}`}
-					alt="Sunset in the mountains"
+					alt={title}
 				/>
 				<div className="px-6 py-4">
 					<div className="mb-2 font-bold text-xl">{title}</div>
