@@ -1,65 +1,62 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useEffect } from "react";
+import { createSwapy } from "swapy";
 import TodoItem from "./TodoItem";
 
-function TodoListForm({ todos, handleDelete, handleEdit, handleDragEnd }) {
-	const [draggedIndex, setDraggedIndex] = useState(null);
-	const [placeholderIndex, setPlaceholderIndex] = useState(null);
+function TodoListForm({
+	todos,
+	handleDelete,
+	handleEdit,
+	handleComplete,
+	handleDragEnd,
+}) {
 	const listRef = useRef(null);
+	const originalTodosRef = useRef(todos);
 
-	const onDragStart = (index) => {
-		setDraggedIndex(index);
-	};
+	useEffect(() => {
+		originalTodosRef.current = todos;
+	}, [todos]);
 
-	const onDragOver = (e, index) => {
-		e.preventDefault();
-		if (draggedIndex === index) return;
-		setPlaceholderIndex(index);
-	};
+	useEffect(() => {
+		if (todos.length === 0) return;
 
-	const onDragEnd = () => {
-		if (placeholderIndex !== null && draggedIndex !== null) {
-			const newTodos = [...todos];
-			const [draggedItem] = newTodos.splice(draggedIndex, 1);
-			newTodos.splice(placeholderIndex, 0, draggedItem);
-			handleDragEnd(newTodos);
-		}
-		setDraggedIndex(null);
-		setPlaceholderIndex(null);
-	};
+		const container = listRef.current;
+		const swapy = createSwapy(container, {
+			animation: "none",
+		});
 
-	const onDrop = () => {
-		setDraggedIndex(null);
-		setPlaceholderIndex(null);
-	};
+		swapy.onSwap(({ data }) => {
+			const newTodos = data.array
+				.map((item) => {
+					const todo = originalTodosRef.current.find((t) => t.id === item.item);
+					return todo ? { ...todo } : null;
+				})
+				.filter(Boolean);
+
+			if (newTodos.length > 0) {
+				handleDragEnd(newTodos);
+			}
+		});
+
+		return () => {
+			swapy.destroy();
+		};
+	}, [todos, handleDragEnd]);
 
 	return (
 		<ul
 			ref={listRef}
-			className="todo-list-container relative mx-auto w-2/3 rounded-lg bg-white/10 p-4 text-white backdrop-blur-lg"
+			className="todo-list-container relative mx-auto w-full rounded-lg bg-white/10 p-4 px-4 text-white backdrop-blur-lg sm:px-6 lg:px-8"
 		>
 			{todos.map((todo, index) => (
-				<li key={todo.id} className="my-4">
+				<li key={todo.id} data-swapy-slot={index}>
 					<TodoItem
-						todo={todo.text}
-						id={todo.id}
-						index={index}
+						todo={todo}
 						handleDelete={handleDelete}
 						handleEdit={handleEdit}
-						onDragStart={onDragStart}
-						onDragOver={onDragOver}
-						onDragEnd={onDragEnd}
-						isDragging={index === draggedIndex}
+						handleComplete={handleComplete}
 					/>
 				</li>
 			))}
-			{placeholderIndex !== null && (
-				<div
-					className="absolute right-0 left-0 h-[3px] bg-blue-500 transition-all duration-300 ease-in-out"
-					style={{
-						top: `${placeholderIndex * (listRef.current?.children[0]?.offsetHeight || 0) + placeholderIndex * 16}px`,
-					}}
-				/>
-			)}
 		</ul>
 	);
 }
