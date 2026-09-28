@@ -1,2 +1,5 @@
+# pnpm 10+ only runs install scripts for dependencies listed here.
+# Kept for esbuild, which some transitive tools may still pull in;
+# Vite 8 (Rolldown) itself ships prebuilt binaries and needs no scripts.
 onlyBuiltDependencies:
   - esbuild

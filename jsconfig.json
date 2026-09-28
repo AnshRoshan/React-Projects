@@ -1,15 +1,26 @@
 {
-    "compilerOptions": {
-        "module": "ESNext",
-        "moduleResolution": "Bundler",
-        "target": "ES2020",
-        "jsx": "react",
-        "allowImportingTsExtensions": true,
-        "strictNullChecks": true,
-        "strictFunctionTypes": true
-    },
-    "exclude": [
-        "node_modules",
-        "**/node_modules/*"
-    ]
+	"compilerOptions": {
+		"target": "ES2022",
+		"lib": ["ES2023", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"moduleDetection": "force",
+		"jsx": "react-jsx",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"verbatimModuleSyntax": true,
+		"noEmit": true,
+		"strict": true,
+		"noFallthroughCasesInSwitch": true,
+		"skipLibCheck": true,
+		"checkJs": false,
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"types": ["vite/client"]
+	},
+	"include": ["src", "vite.config.js"],
+	"exclude": ["node_modules", "dist"]
 }
