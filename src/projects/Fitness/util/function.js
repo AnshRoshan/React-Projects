@@ -1,4 +1,5 @@
 import { EXERCISES, SCHEMES, TEMPOS, WORKOUTS } from "./swoldier";
+
 const exercises = exercisesFlattener(EXERCISES);
 
 export function generateWorkout(args) {
@@ -6,7 +7,7 @@ export function generateWorkout(args) {
 	let exer = Object.keys(exercises);
 	exer = exer.filter((key) => exercises[key].meta.environment !== "home");
 	const includedTracker = [];
-	const numSets = 5;
+	const _numSets = 5;
 	let listOfMuscles;
 
 	if (workout === "individual") {
@@ -29,7 +30,7 @@ export function generateWorkout(args) {
 			// 	),
 			// ];
 			return acc.concat(
-				[...Array(Number.parseInt(curr)).keys()].map((val) =>
+				[...Array(Number.parseInt(curr, 10)).keys()].map((_val) =>
 					index === 0 ? "compound" : "accessory",
 				),
 			);
@@ -57,10 +58,10 @@ export function generateWorkout(args) {
 						exerciseHasRequiredMuscle = true;
 					}
 				}
-				if (!exerciseHasRequiredMuscle) {
-					return acc;
+				if (exerciseHasRequiredMuscle) {
+					acc[exercises[curr].type][curr] = exercises[curr];
 				}
-				acc[exercises[curr].type][curr] = exercises[curr];
+				return acc;
 			},
 			{ compound: {}, accessory: {} },
 		);
@@ -111,13 +112,13 @@ export function generateWorkout(args) {
 		if (exercises[randomExercise].unit === "reps") {
 			const tempoSum = tempo
 				.split(" ")
-				.reduce((acc, curr) => acc + Number.parseInt(curr), 0);
-			if (tempoSum * Number.parseInt(repsOrDuraction) > 85) {
+				.reduce((acc, curr) => acc + Number.parseInt(curr, 10), 0);
+			if (tempoSum * Number.parseInt(repsOrDuraction, 10) > 85) {
 				repsOrDuraction = Math.floor(85 / tempoSum);
 			}
 		} else {
 			//set to nearest 5 seconds
-			repsOrDuraction = Math.ceil(Number.parseInt(repsOrDuraction) / 5) * 5;
+			repsOrDuraction = Math.ceil(Number.parseInt(repsOrDuraction, 10) / 5) * 5;
 		}
 		includedTracker.push(randomExercise);
 

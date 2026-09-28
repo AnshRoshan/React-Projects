@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { createSwapy } from "swapy";
 import TodoItem from "./TodoItem";
 

@@ -39,29 +39,35 @@ function Accordion() {
 	};
 
 	return (
-		<div className=" h-screen bg-gradient-to-r from-sky-400 to-green-300 ">
+		<div className="h-screen bg-linear-to-r from-sky-400 to-green-300">
 			<div className="flex flex-col items-center justify-center gap-4 p-8 text-lg">
-				<div
+				<button
+					type="button"
 					className="rounded-full bg-yellow-500 p-4"
-					onClick={() => handleSwitch()}
-					onKeyUp={() => handleSwitch()}
+					onClick={handleSwitch}
+					aria-pressed={multi}
 				>
 					{multi ? "Disable " : "Enable "}
 					Multi Selection
-				</div>
+				</button>
 				{data && data.length > 0 ? (
-					<div className="w-[40rem]">
+					<div className="w-160">
 						{data.map((items) => (
 							<div
 								key={items.id}
-								className="mt-2 rounded bg-amber-600 p-1 px-4 "
-								onClick={() => handleClick(items.id)}
-								onKeyDown={() => handleClick(items.id)}
+								className="mt-2 rounded-sm bg-amber-600 p-1 px-4"
 							>
-								<div className="flex justify-between gap-4">
+								<button
+									type="button"
+									className="flex w-full justify-between gap-4 text-left"
+									onClick={() => handleClick(items.id)}
+									aria-expanded={
+										(click === items.id && !multi) || multid.includes(items.id)
+									}
+								>
 									<span>{items.question} </span>
 									<span className="text-right">+</span>
-								</div>
+								</button>
 								<div
 									className={`${(click === items.id && !multi) || multid.includes(items.id) ? "block" : "hidden"}`}
 								>

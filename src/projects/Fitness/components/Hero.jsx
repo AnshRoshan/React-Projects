@@ -1,5 +1,6 @@
 import { fitness } from "../../../assets";
 import Button from "./Button";
+
 function Hero() {
 	return (
 		<>
@@ -8,7 +9,7 @@ function Hero() {
 				alt="Fitness"
 				className="relative min-h-screen w-full bg-center bg-cover"
 			/>
-			<div className="absolute inset-0 z-10 m-auto flex h-fit max-w-3xl flex-col items-center justify-center gap-4 rounded-xl bg-black/70 p-4 px-24 text-center backdrop-blur-xl ">
+			<div className="absolute inset-0 z-10 m-auto flex h-fit max-w-3xl flex-col items-center justify-center gap-4 rounded-xl bg-black/70 p-4 px-24 text-center backdrop-blur-xl">
 				<p>It&apos;s time to get fit</p>
 				<h1 className="font-semibold text-5xl uppercase md:text-6xl lg:text-7xl">
 					Ansh <span className="text-blue-400">Fitness</span>

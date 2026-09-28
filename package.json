@@ -1,33 +1,39 @@
 {
 	"name": "react-projects",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"type": "module",
+	"description": "A collection of React projects built with Vite, React 19 and Tailwind CSS v4",
+	"license": "MIT",
+	"engines": {
+		"node": "^20.19.0 || >=22.12.0"
+	},
+	"packageManager": "pnpm@12.6.0",
 	"scripts": {
-		"dev": "vite --port 3000",
+		"dev": "vite --port 3000 --host 0.0.0.0",
 		"build": "vite build",
-		"lint": "biome check --write --unsafe src/ ",
-		"preview": "vite preview"
+		"preview": "vite preview --port 4173 --host 0.0.0.0",
+		"lint": "biome check --write --unsafe src/",
+		"lint:ci": "biome ci src/",
+		"format": "biome format --write src/",
+		"clean": "rm -rf dist node_modules/.vite"
 	},
 	"dependencies": {
-		"@tailwindcss/vite": "^4.1.17",
-		"mathjs": "^15.1.0",
-		"react": "^19.2.0",
-		"react-dom": "^19.2.0",
-		"react-icons": "^5.5.0",
-		"react-router-dom": "^7.9.5",
-		"recoil": "^0.7.7",
+		"@tailwindcss/vite": "^4.3.3",
+		"mathjs": "^15.2.0",
+		"react": "^19.3.0",
+		"react-dom": "^19.3.0",
+		"react-icons": "^5.7.0",
+		"react-router-dom": "^7.18.4",
 		"swapy": "^1.0.5",
-		"uuid": "^13.0.0"
+		"uuid": "^14.0.2"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.3.4",
-		"@types/react": "^19.2.2",
-		"@types/react-dom": "^19.2.2",
-		"@vitejs/plugin-react": "^5.1.0",
-		"autoprefixer": "^10.4.21",
-		"postcss": "^8.5.6",
-		"tailwindcss": "^4.1.17",
-		"vite": "^7.2.2"
+		"@biomejs/biome": "^2.5.14",
+		"@types/react": "^19.3.0",
+		"@types/react-dom": "^19.3.0",
+		"@vitejs/plugin-react": "^6.1.1",
+		"tailwindcss": "^4.3.3",
+		"vite": "^8.3.1"
 	}
 }

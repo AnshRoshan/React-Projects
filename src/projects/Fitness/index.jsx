@@ -20,7 +20,7 @@ function Fitness() {
 		window.location.href = "#workout";
 	}
 	return (
-		<div className="flex min-h-dvh flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white">
+		<div className="flex min-h-dvh flex-col bg-linear-to-r from-slate-800 to-slate-950 text-white">
 			<Hero />
 			<Generator
 				poison={poison}

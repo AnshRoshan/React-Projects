@@ -26,7 +26,7 @@ function TodoInput({ handleAddItem }) {
 					type="text"
 					value={inputValue}
 					onChange={(e) => setInputValue(e.target.value)}
-					className="flex-grow rounded-3xl bg-transparent px-4 font-bold text-xl outline-none sm:px-10 sm:text-3xl"
+					className="grow rounded-3xl bg-transparent px-4 font-bold text-xl outline-hidden sm:px-10 sm:text-3xl"
 					placeholder="Add a new task..."
 				/>
 				<button type="submit">
