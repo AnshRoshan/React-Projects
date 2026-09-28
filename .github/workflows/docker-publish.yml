@@ -24,12 +24,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
+      # Prefers a PAT (packages:write) when one is configured, and otherwise
+      # falls back to the built-in GITHUB_TOKEN. The token can only publish
+      # when the repository allows write permissions for workflows
+      # (Settings -> Actions -> General -> Workflow permissions) and, for an
+      # already existing package, when the repository is granted write access
+      # under the package's "Manage Actions access" settings.
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v4
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.PATOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Extract metadata (tags, labels)
         id: meta
