@@ -1,181 +1,163 @@
 # React Projects Collection
 
-![React Logo](https://reactjs.org/logo-og.png)
-
-Welcome to the React Projects Collection repository! Here, you'll find a diverse range of React projects that showcase various features and functionalities of React, helping you learn and explore the world of React development.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Project List](#project-list)
-- [Getting Started](#getting-started)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
-
-React is a powerful JavaScript library for building user interfaces. This repository aims to provide you with a curated collection of React projects, each focusing on different aspects of React development. Whether you're a beginner looking to get started with React or an experienced developer seeking to deepen your knowledge, you'll find something valuable in this collection.
-
-## Project List
-
-### 1. [Counter](/src/projects/Counter/)
-
-_Description: A beautiful Counter App._
-
-![Project 1 Screenshot](https://images.pexels.com/photos/1329295/pexels-photo-1329295.jpeg?auto=compress&cs=tinysrgb&w=600&h=500&dpr=1)
-
-### 2. [Password Generator](/src/projects/PasswordGenerator/)
-
-_Description: A great password generator._
-
-![Project 2 Screenshot](https://images.pexels.com/photos/2882630/pexels-photo-2882630.jpeg?auto=compress&cs=tinysrgb&w=600)
-
-### 3. [Currency Converter](/src/projects/CurrencyConverter/)
-
-_Description: A Currency Converter App._
-
-![Project 3 Screenshot](https://images.pexels.com/photos/4386158/pexels-photo-4386158.jpeg?auto=compress&cs=tinysrgb&h=500&dpr=1)
-
-### 4. [Accordion](/src/projects/Accordion/)
-
-_Description: An Accordion App._
-
-![Project 4 Screenshot](https://images.pexels.com/photos/8520147/pexels-photo-8520147.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
-
-### 5. [Calculator](/src/projects/Calculator/)
-
-_Description: A Calculator App._
-
-![Project 5 Screenshot](https://images.pexels.com/photos/4386326/pexels-photo-4386326.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
-
-### 6. [Color Generator](/src/projects/ColorGenerator/)
-
-_Description: A Color Generator App._
-
-![Project 6 Screenshot](https://images.pexels.com/photos/977246/pexels-photo-977246.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
-
-### 7. [Nasa API ](/src/projects/Nasa/)
-
-_Description: A Nasa API App._
-
-![Project 7 Screenshot](https://images.pexels.com/photos/2150/sky-space-dark-galaxy.jpg?auto=compress&cs=tinysrgb&w=600&h=500&dpr=1)
-
-### 8. [Fitness APP](/src/projects/Fitness/)
-
-_Description: A Fitness App._
-
-![Project 8 Screenshot](https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=700&h=500&dpr=1)
-
-<!--
-
-...
-
-### N. [Project Name N](/projects/project-name-N)
-
-_Description: A brief description of the Nth project._
-
-![Project N Screenshot](/projects/project-name-N/screenshot.png)
-
-Each project directory contains its source code, detailed documentation, and a screenshot to give you a glimpse of what it looks like.
--->
-
-## Getting Started
-
-To get started with any of the projects in this collection, follow these steps:
-
-### 1. Install Node.js and pnpm
-
-To run this project locally, you'll need to have Node.js and pnpm installed on your machine.
-
-#### Node.js
-
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It's required to execute JavaScript code outside of a web browser, including running scripts and building applications.
-
-- **Installation:**
-
-  - Visit the [official Node.js website](https://nodejs.org/).
-  - Download the installer for your operating system (Windows, macOS, or Linux).
-  - Follow the installation instructions provided on the website.
-
-- **Verification:**
-  - After installation, open your terminal or command prompt.
-  - Run the following command to verify that Node.js is installed:
-    ```
-    node -v
-    ```
-  - You should see the version number of Node.js printed in the terminal.
-
-#### pnpm
-
-pnpm is a fast, disk-space-efficient package manager for JavaScript projects. It's compatible with npm and yarn, but it optimizes the package installation process by using a single store for all dependencies.
-
-- **Installation:**
-
-  - After installing Node.js, open your terminal or command prompt.
-  - Run the following command to install pnpm globally:
-    ```
-    npm install -g pnpm
-    ```
-
-- **Verification:**
-  - After installation, run the following command to verify that pnpm is installed:
-    ```
-    pnpm -v
-    ```
-  - You should see the version number of pnpm printed in the terminal.
-
-Once Node.js and pnpm are installed and verified, you're ready to set up and run the project locally.
-
-### 2. Clone the Repository:
-
-1. Clone this repository to your local machine:
-
-   ```
-   git clone https://github.com/AnshRoshan/React-projects.git
-   ```
-
-2. Navigate to the specific project directory you're interested in:
-
-   ```
-   cd React-projects
-   ```
-
-### 3. Install Dependencies:
-
-- install all the dependency
-
-  ```
-  pnpm i
-  ```
-
-### 4. Start the Development Server:
-
-- To start the development server, run the following command:
-
-  ```
-  pnpm run dev
-  ```
-
-### 5. Open the Application:
-
-- Once the development server is running, you can open the application in your browser by visiting [http://localhost:3000](http://localhost:3000).
-
-### 6. Create a `.env.local` File:
-
-- Create a `.env.local` file in the Chalchitra-Backend directory and add the following environment variables:
-
-  ```
-
-  ```
-
-- Rename the `.env.example` into `.env.local` file
+A collection of small, self-contained React apps (counter, calculator, currency
+converter, password generator, to-do list, NASA APOD viewer and more) rendered
+through a single shell with routing.
+
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)
+![Biome](https://img.shields.io/badge/Biome-2-60A5FA?logo=biome&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+## Tech stack
+
+| Tool           | Version | Notes                                                            |
+| -------------- | ------- | ---------------------------------------------------------------- |
+| React          | 19.3    | Modern JSX transform, `StrictMode`, document metadata hoisting    |
+| Vite           | 8.3     | Rolldown powered build, `@vitejs/plugin-react` 6                  |
+| Tailwind CSS   | 4.3     | CSS-first config (`@theme` in `src/index.css`), no JS config file |
+| React Router   | 7.18    | `HashRouter` + `Routes`/`Route`                                   |
+| Biome          | 2.5     | Linter + formatter + import sorting (replaces ESLint/Prettier)    |
+| mathjs         | 15.2    | Calculator engine, imported through the tree-shakable `/number`   |
+| uuid           | 14      | To-do ids                                                         |
+| react-icons    | 5.7     | Icon set                                                          |
+| swapy          | 1.0     | Drag and drop for the to-do list                                  |
+| pnpm           | 12      | Pinned through the `packageManager` field                         |
+
+## Requirements
+
+- **Node.js** `^20.19.0 || >=22.12.0` (see `.nvmrc`, Node 22 LTS is used in CI and Docker)
+- **pnpm 12** — enable it once with `corepack enable` (Corepack ships with Node and
+  installs the exact version pinned in `package.json`)
+
+## Getting started
+
+```bash
+git clone https://github.com/AnshRoshan/React-Projects.git
+cd React-Projects
+
+corepack enable        # makes the pinned pnpm version available
+pnpm install
+
+cp .env.example .env   # optional, only needed for the NASA API key
+pnpm dev               # http://localhost:3000
+```
+
+## Scripts
+
+| Script            | Description                                             |
+| ----------------- | ------------------------------------------------------- |
+| `pnpm dev`        | Start the Vite dev server on port 3000 with HMR         |
+| `pnpm build`      | Production build into `dist/`                           |
+| `pnpm preview`    | Serve the production build on port 4173                 |
+| `pnpm lint`       | Run Biome and write safe/unsafe fixes (`src/`)          |
+| `pnpm lint:ci`    | Run Biome in read-only mode — used by the CI workflow   |
+| `pnpm format`     | Format `src/` with Biome                                |
+| `pnpm clean`      | Remove `dist/` and the Vite cache                       |
+
+## Environment variables
+
+Only Vite variables (prefixed with `VITE_`) reach the browser. Copy
+`.env.example` to `.env` and adjust:
+
+| Variable            | Default  | Description                                                                  |
+| ------------------- | -------- | ---------------------------------------------------------------------------- |
+| `VITE_NASA_API_KEY` | `DEMO_KEY` | Key for [api.nasa.gov](https://api.nasa.gov). `DEMO_KEY` is enough for light use |
+| `VITE_BASE`         | –        | Overrides the build base path (defaults to `/React-Projects/` for `pnpm build`) |
+
+## Projects
+
+Every project lives in `src/projects/` and is registered as a route in
+`src/App.jsx`. Routes are lazily loaded, so each app is only downloaded when it
+is opened.
+
+| Route          | Project            | Source                                  |
+| -------------- | ------------------ | --------------------------------------- |
+| `/`            | Project gallery    | `src/pages/Project.jsx`                 |
+| `/counter`     | Counter            | `src/projects/Counter.jsx`              |
+| `/passgen`     | Password generator | `src/projects/PassGen.jsx`              |
+| `/currency`    | Currency converter | `src/projects/Currency.jsx`             |
+| `/accordion`   | Accordion          | `src/projects/Accordion.jsx`            |
+| `/calculator`  | Calculator         | `src/projects/Calculator.jsx`           |
+| `/color`       | Color generator    | `src/projects/Color.jsx`                |
+| `/todo`        | To-do list         | `src/projects/Todo/`                    |
+| `/nasa`        | NASA APOD viewer   | `src/projects/NASA/`                    |
+| `/fit`         | Fitness app        | `src/projects/Fitness/`                 |
+| `/nike`        | Nike landing page  | `src/projects/NikeLanding.jsx`          |
+| `/discord`     | Discord layout     | `src/projects/Discord.jsx`              |
+| `/invoice`     | Invoice form       | `src/projects/Invoice/`                 |
+| `/quiz`        | Quiz (placeholder) | `src/projects/Quiz.jsx`                 |
+| `/about`       | About              | `src/pages/About.jsx`                   |
+| `/contact`     | Contact            | `src/pages/Contact.jsx`                 |
+| `*`            | 404 page           | `src/pages/ErrorPage.jsx`               |
+
+## Project structure
+
+```
+.
+├── .github/
+│   ├── dependabot.yml          # weekly dependency updates
+│   └── workflows/
+│       ├── ci.yml              # lint + build on every PR
+│       ├── deploy-pages.yml    # GitHub Pages deployment
+│       └── docker-publish.yml  # multi-arch image published to GHCR
+├── public/                     # static files served as-is
+├── src/
+│   ├── assets/                 # images imported by the components
+│   ├── components/             # shared UI (Navbar, Footer, Card, InputBox)
+│   ├── config/                 # layout experiments (Scaffolding, Text)
+│   ├── hooks/                  # custom hooks (useCurrencyInfo)
+│   ├── pages/                  # routed pages
+│   ├── projects/               # one folder/file per mini app
+│   ├── util/                   # project metadata used by the gallery
+│   ├── App.jsx                 # route table (lazy loaded)
+│   ├── index.css               # Tailwind import + theme tokens
+│   └── main.jsx                # React root + HashRouter
+├── biome.json                  # lint/format configuration
+├── Dockerfile / Dockerfile.dev # production image / dev container
+├── nginx.conf                  # SPA + caching config for the image
+└── vite.config.js              # Vite config (base path, alias, ports)
+```
+
+## Theming
+
+Colors are exposed as RGB channels in `src/index.css` (`:root` for the light
+theme, `.dark` for the dark theme) and hooked into Tailwind with `@theme`, which
+generates the `bg-primary`, `text-text`, `bg-background` … utilities. The
+navbar's theme toggle flips the `dark` class on `<html>` and remembers the
+choice in `localStorage`.
+
+## Deployment
+
+### GitHub Pages
+
+Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which installs
+with pnpm, builds with `pnpm build` (base path `/React-Projects/`) and publishes
+`dist/` to GitHub Pages. `HashRouter` is used so deep links such as
+`#/calculator` work without any server-side rewrite rules.
+
+### Docker
+
+```bash
+docker build -t react-projects .
+docker run -p 8080:80 react-projects   # http://localhost:8080
+```
+
+The image is a multi-stage build (Node 22 → nginx alpine) served from the domain
+root and published to GHCR on every push to `main`:
+`ghcr.io/anshroshan/react-project-ghcr:latest`.
+
+For local development inside a container use `Dockerfile.dev`, which runs the
+Vite dev server on port 3000.
 
 ## Contributing
 
-We welcome contributions to this collection of React projects. Whether you want to add your own project, fix a bug, or improve documentation, please follow our [Contribution Guidelines](CONTRIBUTING.md) to get started.
+Contributions are welcome — please read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md) first. Run `pnpm lint` and `pnpm build`
+before opening a pull request; CI runs the same checks.
 
 ## License
 
-This React Projects Collection is open-source and available under the [MIT License](LICENSE). Feel free to use, modify, and distribute these projects for your personal and educational purposes.
-
-Happy coding with React!
+Released under the [MIT License](LICENSE).

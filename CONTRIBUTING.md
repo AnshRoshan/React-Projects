@@ -13,7 +13,7 @@ To contribute to the React Projects Collection, start by forking the repository 
 After forking the repository, clone it to your local machine using the following command:
 
 ```
-git clone https://github.com/your-username/React-projects.git
+git clone https://github.com/your-username/React-Projects.git
 ```
 
 Replace `your-username` with your GitHub username.
@@ -23,7 +23,7 @@ Replace `your-username` with your GitHub username.
 Before making any changes, create a new branch to work on your contributions. Name the branch descriptively to indicate the nature of your changes:
 
 ```
-git checkout -b feature/your-feature-name
+git switch -c feature/your-feature-name
 ```
 
 ### Make Your Changes
@@ -34,12 +34,21 @@ Now, you can make your desired changes to the project. You can add new projects,
 
 It's important to test your changes locally to ensure they work as expected. Follow the instructions in the README.md file to set up and run the project locally. Test all functionalities related to your changes.
 
+Before opening a pull request, please run:
+
+```
+pnpm lint
+pnpm build
+```
+
+The same checks run in GitHub Actions (`.github/workflows/ci.yml`) on every pull request.
+
 ### Commit Your Changes
 
 Once you're satisfied with your changes, commit them with a clear and descriptive commit message:
 
 ```
-git add -a
+git add -A
 git commit -m "Add feature: description of your changes"
 ```
 
