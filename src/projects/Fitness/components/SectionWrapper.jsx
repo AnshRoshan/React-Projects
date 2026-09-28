@@ -8,7 +8,7 @@ function SectionWrapper({ children, header, title, id }) {
 					{title[2]}
 				</h2>
 			</div>
-			<div className="mx-auto flex w-full max-w-[800px] flex-col gap-10 p-4 ">
+			<div className="mx-auto flex w-full max-w-[800px] flex-col gap-10 p-4">
 				{children}
 			</div>
 		</section>

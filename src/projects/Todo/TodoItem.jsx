@@ -41,7 +41,7 @@ function TodoItem({ todo, handleDelete, handleEdit, handleComplete }) {
 						type="text"
 						value={editValue}
 						onChange={(e) => setEditValue(e.target.value)}
-						className="mb-2 flex-grow rounded-3xl bg-transparent px-2 text-gray-600 outline-none sm:mb-0 sm:px-4 "
+						className="mb-2 grow rounded-3xl bg-transparent px-2 text-gray-600 outline-hidden sm:mb-0 sm:px-4"
 					/>
 					<select
 						value={editPriority}
@@ -62,7 +62,7 @@ function TodoItem({ todo, handleDelete, handleEdit, handleComplete }) {
 			) : (
 				<>
 					<p
-						className={`flex-grow overflow-hidden font-semibold text-md capitalize sm:text-xl ${
+						className={`grow overflow-hidden font-semibold text-md capitalize sm:text-xl ${
 							todo.completed ? "line-through" : ""
 						}`}
 					>

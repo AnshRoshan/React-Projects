@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import TodoInput from "./TodoInput";
 import TodoListForm from "./TodoListForm";
-import { v4 as uuidv4 } from "uuid";
 
 function TodoList() {
 	const [todos, setTodos] = useState([]);
@@ -81,7 +81,7 @@ function TodoList() {
 						placeholder="Search todos..."
 						value={searchTerm}
 						onChange={(e) => setSearchTerm(e.target.value)}
-						className="mx-auto mb-4 block w-11/12 rounded-md border border-gray-300 p-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:px-6 lg:px-8"
+						className="mx-auto mb-4 block w-11/12 rounded-md border border-gray-300 p-2 px-4 focus:outline-hidden focus:ring-2 focus:ring-blue-500 sm:px-6 lg:px-8"
 					/>
 					<TodoListForm
 						todos={filteredTodos}

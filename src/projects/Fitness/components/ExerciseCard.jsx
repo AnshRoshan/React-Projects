@@ -23,7 +23,7 @@ export default function ExerciseCard({ exercise, i }) {
 				<p className="capitalize">{exercise.muscles.join(" & ")}</p>
 			</div>
 
-			<div className="flex flex-col gap-2 rounded bg-slate-950 ">
+			<div className="flex flex-col gap-2 rounded-sm bg-slate-950">
 				{exercise.description.split("___").map((val) => {
 					return (
 						<div className="text-sm" key={val}>
@@ -38,7 +38,7 @@ export default function ExerciseCard({ exercise, i }) {
 					return (
 						<div
 							key={info}
-							className="flex w-full flex-col rounded border-[1.5px] border-slate-900 border-solid p-2"
+							className="flex w-full flex-col rounded-sm border-[1.5px] border-slate-900 border-solid p-2"
 						>
 							<h3 className="text-slate-400 text-sm capitalize">
 								{info === "reps" ? `${exercise.unit}` : info}
@@ -51,7 +51,7 @@ export default function ExerciseCard({ exercise, i }) {
 				<button
 					type="button"
 					onClick={handleSetIncrement}
-					className="flex w-full flex-col rounded border-[1.5px] border-blue-900 border-solid p-2 duration-200 hover:border-blue-600 "
+					className="flex w-full flex-col rounded-sm border-[1.5px] border-blue-900 border-solid p-2 duration-200 hover:border-blue-600"
 				>
 					<h3 className="text-slate-400 text-sm capitalize">Sets completed</h3>
 					<p className="font-medium">{setsCompleted} / 5</p>

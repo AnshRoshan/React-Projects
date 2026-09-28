@@ -14,28 +14,28 @@ function Counter() {
 	};
 
 	return (
-		<div className="flex h-screen items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-3xl ">
+		<div className="flex h-screen items-center justify-center bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-3xl">
 			<div className="flex h-1/2 w-1/3 items-center justify-center rounded-3xl bg-sky-500">
 				<div className="flex h-2/3 min-w-[120%] flex-col items-center justify-around rounded-2xl bg-violet-900 p-4">
 					<p className="font-bold text-9xl text-white italic">{count}</p>
-					<div className="flex w-full gap-4 ">
+					<div className="flex w-full gap-4">
 						<button
 							type="button"
-							className="w-full rounded-lg bg-sky-500 py-1 shadow-lg "
+							className="w-full rounded-lg bg-sky-500 py-1 shadow-lg"
 							onClick={handleDecreament}
 						>
 							<GrSubtractCircle className="mx-auto text-white" />
 						</button>
 						<button
 							type="button"
-							className="w-full rounded-lg border-2 border-sky-500 py-1 shadow-lg "
+							className="w-full rounded-lg border-2 border-sky-500 py-1 shadow-lg"
 							onClick={handleReset}
 						>
 							<GrPowerReset className="mx-auto text-sky-500" />
 						</button>
 						<button
 							type="button"
-							className="w-full rounded-lg bg-sky-500 py-1 shadow-lg "
+							className="w-full rounded-lg bg-sky-500 py-1 shadow-lg"
 							onClick={handleIncrement}
 						>
 							<GrAddCircle className="mx-auto text-white" />

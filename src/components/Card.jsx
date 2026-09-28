@@ -4,11 +4,11 @@ function Card({ title, description, image, tags, link }) {
 	return (
 		<Link
 			to={`${link}`}
-			className="mr-10 max-h-[30rem] min-w-48 overflow-hidden rounded-xl bg-slate-400 shadow-lg "
+			className="mr-10 max-h-120 min-w-48 overflow-hidden rounded-xl bg-slate-400 shadow-lg"
 		>
 			<div>
 				<img
-					className="m-4 mx-auto h-44 w-[90%] rounded-2xl bg-cover "
+					className="m-4 mx-auto h-44 w-[90%] rounded-2xl bg-cover"
 					src={`${image}`}
 					alt={title}
 				/>

@@ -6,9 +6,6 @@ export default function Currency() {
 	const [from, setFrom] = useState("usd");
 	const [to, setTo] = useState("inr");
 	const [convertedAmount, setConvertedAmount] = useState(0);
-	console.log("amount", amount);
-	console.log("from", from);
-	console.log("to", to);
 	const currencyInfo = useCurrencyInfo(from);
 
 	const options = Object.keys(currencyInfo);
@@ -25,16 +22,16 @@ export default function Currency() {
 	};
 
 	return (
-		<div className="flex h-screen w-full flex-wrap items-center justify-center bg-gradient-to-r from-yellow-300 to-red-300">
+		<div className="flex h-screen w-full flex-wrap items-center justify-center bg-linear-to-r from-yellow-300 to-red-300">
 			<div className="w-full lg:text-xl xl:text-2xl">
-				<div className="mx-auto w-full max-w-xl rounded-lg border border-gray-60 bg-white/30 p-5 backdrop-blur-sm xl:max-w-5xl">
+				<div className="mx-auto w-full max-w-xl rounded-lg border border-gray-60 bg-white/30 p-5 backdrop-blur-xs xl:max-w-5xl">
 					<form
 						onSubmit={(e) => {
 							e.preventDefault();
 							convert();
 						}}
 					>
-						<div className="mb-1 w-full ">
+						<div className="mb-1 w-full">
 							<InputBox
 								label="From"
 								amount={amount}
@@ -47,7 +44,7 @@ export default function Currency() {
 						<div className="relative h-3 w-full">
 							<button
 								type="button"
-								className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white"
+								className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-md border-2 border-white bg-blue-600 px-2 py-0.5 text-white"
 								onClick={swap}
 							>
 								swap

@@ -1,16 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import { HashRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import { HashRouter } from "react-router-dom";
 
-// Determine the base URL based on the environment
-const baseUrl =
-  process.env.NODE_ENV === "production" ? "/React-Projects/" : "/";
-
-// Render the application
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <HashRouter basename={baseUrl}>
-    <App />
-  </HashRouter>
+// HashRouter keeps deep links working on GitHub Pages (and any static host)
+// without server side rewrites. Static assets are handled by Vite's `base`.
+createRoot(document.getElementById("root")).render(
+	<StrictMode>
+		<HashRouter>
+			<App />
+		</HashRouter>
+	</StrictMode>,
 );

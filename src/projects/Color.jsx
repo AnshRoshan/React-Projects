@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Color() {
 	const [colorcode, setColorCode] = useState("#8877ff");
@@ -24,11 +24,6 @@ function Color() {
 			setColorPalette((prevPalette) => [...prevPalette, colorcode]);
 		}
 	};
-
-	useEffect(() => {
-		// Log the current color code after it has been updated
-		console.log("colorcode:", colorcode);
-	}, [colorcode]);
 
 	return (
 		<div
@@ -76,7 +71,7 @@ function Color() {
 					>
 						<button
 							type="button"
-							className="absolute top-[-1rem] right-[-1rem] z-10 h-8 w-8 rounded-full bg-red-500 font-bold text-sm text-white"
+							className="absolute -top-4 -right-4 z-10 h-8 w-8 rounded-full bg-red-500 font-bold text-sm text-white"
 							onClick={() =>
 								setColorPalette((prevPalette) =>
 									prevPalette.filter((_, i) => i !== index),

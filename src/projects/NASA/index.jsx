@@ -4,6 +4,9 @@ import Footer from "./Footer";
 import Main from "./Main";
 import Sidebar from "./Sidebar";
 
+const CACHE_KEY = "nasa_apod";
+const API_KEY = import.meta.env.VITE_NASA_API_KEY || "DEMO_KEY";
+
 function Nasa() {
 	const [showModal, setShowModal] = useState(false);
 	const [loading, setLoading] = useState(true);
@@ -11,50 +14,56 @@ function Nasa() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		document.title = "Nasa Space Image";
-		const cachedData = localStorage.getItem("nasa_apod");
-
+		const cachedData = localStorage.getItem(CACHE_KEY);
 		if (cachedData) {
-			setData(JSON.parse(cachedData));
-			setLoading(false);
-		} else {
-			fetchAPIData();
+			try {
+				setData(JSON.parse(cachedData));
+				setLoading(false);
+				return;
+			} catch {
+				// Corrupted cache: fall through and fetch a fresh copy.
+				localStorage.removeItem(CACHE_KEY);
+			}
 		}
 
+		const controller = new AbortController();
+
 		async function fetchAPIData() {
-			const apiKey = import.meta.env.VITE_NASA_API_KEY;
-			const url = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 			try {
-				const res = await fetch(url);
+				const res = await fetch(
+					`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`,
+					{ signal: controller.signal },
+				);
 				const apiData = await res.json();
 
-				if (res.ok) {
-					setData(apiData);
-					localStorage.setItem("nasa_apod", JSON.stringify(apiData));
-				} else {
+				if (!res.ok) {
 					throw new Error(apiData.error?.message || "Failed to fetch data");
 				}
+
+				setData(apiData);
+				localStorage.setItem(CACHE_KEY, JSON.stringify(apiData));
 			} catch (err) {
-				setError(err.message);
+				if (err.name !== "AbortError") {
+					setError(err.message);
+				}
 			} finally {
 				setLoading(false);
 			}
 		}
+
+		fetchAPIData();
+
+		return () => controller.abort();
 	}, []);
 
-	useEffect(() => {
-		if (data) {
-			console.log(data);
-			// Logs data when it's updated
-		}
-	}, [data]);
-
 	const handleModal = () => {
-		setShowModal(!showModal);
+		setShowModal((prev) => !prev);
 	};
 
 	return (
 		<div className="min-h-screen bg-[#030615] text-white">
+			{/* React 19 hoists title/meta tags rendered anywhere in the tree into <head> */}
+			<title>Nasa Space Image</title>
 			{loading ? (
 				<div className="flex h-full w-full items-center justify-center">
 					<AiOutlineLoading3Quarters className="animate-spin" />

@@ -1,4 +1,4 @@
-import React, { useId } from "react";
+import { useId } from "react";
 
 function InputBox({
 	label,
@@ -27,7 +27,7 @@ function InputBox({
 				<input
 					id={amountInputId}
 					list="Multiple"
-					className="w-full bg-transparent py-1.5 outline-none"
+					className="w-full bg-transparent py-1.5 outline-hidden"
 					type="number"
 					placeholder="Amount"
 					disabled={amountDisable}
@@ -47,7 +47,7 @@ function InputBox({
 			<div className="flex w-1/2 flex-wrap justify-end text-right">
 				<p className="mb-2 w-full text-black/40">Currency Type</p>
 				<select
-					className="cursor-pointer rounded-lg bg-gray-100 px-1 py-1 outline-none"
+					className="cursor-pointer rounded-lg bg-gray-100 px-1 py-1 outline-hidden"
 					value={selectCurrency}
 					onChange={(e) => onCurrencyChange?.(e.target.value)}
 					disabled={currencyDisable}

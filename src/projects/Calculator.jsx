@@ -1,5 +1,7 @@
-import { evaluate } from "mathjs";
-import { useEffect, useState } from "react";
+// `mathjs/number` is the tree-shakable entry point: it ships only the
+// number implementation instead of the full mathjs bundle.
+import { evaluate } from "mathjs/number";
+import { useState } from "react";
 
 function Button({ className, onClick, children }) {
 	return (
@@ -65,14 +67,14 @@ function Calculator() {
 			// Rounding to 7 decimal places
 			const roundedResult = Math.round(evaluatedResult * 1e7) / 1e7;
 			setResult(roundedResult.toString());
-		} catch (error) {
+		} catch (_error) {
 			setResult("Error");
 		}
 		setCalculated(true);
 	}
 
 	return (
-		<div className="flex min-h-dvh items-center justify-center gap-12 bg-gradient-to-r from-30% from-indigo-500 via-60% via-sky-500 to-80% to-emerald-500">
+		<div className="flex min-h-dvh items-center justify-center gap-12 bg-linear-to-r from-30% from-indigo-500 via-60% via-sky-500 to-80% to-emerald-500">
 			<div className="rounded-xl bg-black p-4 shadow-inner">
 				<div className="mb-4 flex h-28 flex-col items-end justify-between rounded-xl bg-indigo-300 p-3 text-right font-semibold">
 					<div className="text-gray-900 text-xl underline underline-offset-2">

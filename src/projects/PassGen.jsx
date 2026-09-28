@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import { FaClipboard } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaClipboard, FaClipboardCheck } from "react-icons/fa";
 import { FaRepeat } from "react-icons/fa6";
 
 function PassGen() {
@@ -16,6 +15,7 @@ function PassGen() {
 	const [newPassword, setNewPassword] = useState(false);
 	const [password, setPassword] = useState("Alpha123!");
 	const [length, setLength] = useState(16);
+	const [copied, setCopied] = useState(false);
 
 	useEffect(() => {
 		const generatePassword = (length) => {
@@ -65,17 +65,17 @@ function PassGen() {
 		navigator.clipboard
 			.writeText(text)
 			.then(() => {
-				console.log("Text copied to clipboard:", text);
-				// Optionally, you can show a success message to the user
+				setCopied(true);
+				setTimeout(() => setCopied(false), 1500);
 			})
 			.catch((err) => {
+				// Browsers without the async clipboard API, or a denied permission.
 				console.error("Unable to copy text to clipboard:", err);
-				// Handle any errors here, such as browser support or permissions
 			});
 	};
 
 	return (
-		<div className="flex h-screen items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 ">
+		<div className="flex h-screen items-center justify-center bg-linear-to-r from-cyan-500 to-blue-500">
 			<div className="container rounded-lg bg-slate-900 p-8">
 				<h1 className="mb-4 text-center font-bold text-4xl text-white">
 					Password Generator
@@ -86,7 +86,7 @@ function PassGen() {
 							type="text"
 							id="password"
 							value={password}
-							className="w-full flex-grow rounded-full bg-teal-200 text-center"
+							className="w-full grow rounded-full bg-teal-200 text-center"
 							onChange={(e) => {
 								setLength(e.target.value.length);
 								setPassword(e.target.value);
@@ -94,14 +94,15 @@ function PassGen() {
 						/>
 						<button
 							type="button"
-							className="flex items-center justify-center rounded bg-blue-500 p-1 font-bold text-white hover:bg-blue-700"
+							aria-label="Copy password to clipboard"
+							className="flex items-center justify-center rounded-sm bg-blue-500 p-1 font-bold text-white hover:bg-blue-700"
 							onClick={() => copyToClipboard(password)}
 						>
-							<FaClipboard />
+							{copied ? <FaClipboardCheck /> : <FaClipboard />}
 						</button>
 						<button
 							type="button"
-							className="flex items-center justify-center rounded bg-blue-500 p-1 font-bold text-white hover:bg-blue-700"
+							className="flex items-center justify-center rounded-sm bg-blue-500 p-1 font-bold text-white hover:bg-blue-700"
 							onClick={() => setNewPassword(!newPassword)}
 						>
 							<FaRepeat />
@@ -126,17 +127,15 @@ function PassGen() {
 							<input
 								type="checkbox"
 								id="uppercase"
-								defaultChecked={uppercaseChecked}
 								checked={uppercaseChecked}
 								onChange={(e) => setUppercaseChecked(e.target.checked)}
-								className="form-checkbox abb rounded-full bg-teal-200 text-purple-200 "
+								className="form-checkbox abb rounded-full bg-teal-200 text-purple-200"
 							/>
 							<label htmlFor="uppercase">Uppercase</label>
 
 							<input
 								type="checkbox"
 								id="lowercase"
-								defaultChecked={lowercaseChecked}
 								checked={lowercaseChecked}
 								onChange={(e) => setLowercaseChecked(e.target.checked)}
 							/>
@@ -145,7 +144,6 @@ function PassGen() {
 							<input
 								type="checkbox"
 								id="numbers"
-								defaultChecked={numbersChecked}
 								checked={numbersChecked}
 								onChange={(e) => setNumbersChecked(e.target.checked)}
 							/>
@@ -154,7 +152,6 @@ function PassGen() {
 							<input
 								type="checkbox"
 								id="symbols"
-								defaultChecked={symbolsChecked}
 								checked={symbolsChecked}
 								onChange={(e) => setSymbolsChecked(e.target.checked)}
 							/>

@@ -1,13 +1,16 @@
+// Static placeholder channels - stable ids keep React's keys unique.
+const channels = Array.from({ length: 40 }, (_, index) => `channel-${index}`);
+
 function Scaffolding() {
 	return (
 		<div className="flex h-screen">
-			<div className="space-y-2 overflow-y-scroll bg-neutral-800 p-3 ">
-				{[...Array(40)].map((element, i) => (
+			<div className="space-y-2 overflow-y-scroll bg-neutral-800 p-3">
+				{channels.map((channel, index) => (
 					<div
-						key={element}
+						key={channel}
 						className="flex h-12 w-12 items-center justify-center rounded-full bg-white/30"
 					>
-						{i}
+						{index}
 					</div>
 				))}
 			</div>

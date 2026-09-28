@@ -67,7 +67,7 @@ export const WORKOUTS = {
 //pick a random exercise
 //for non-members, exclude all the at home specific exercises (anything particularly pussy like a lot of the bodyweight stuff)
 
-const bw_exercises = {};
+const _bw_exercises = {};
 
 export const EXERCISES = {
 	barbell_bench_press: {

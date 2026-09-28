@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { SCHEMES, WORKOUTS } from "../util/swoldier";
 import Button from "./Button";
 import SectionWrapper from "./SectionWrapper";
@@ -76,7 +76,7 @@ export default function Generator({
 								setMuscles([]);
 								setPoison(type);
 							}}
-							className={`rounded-lg border bg-slate-950 px-4 py-3 duration-200 hover:border-blue-600 ${type === poison ? " border-blue-600" : " border-blue-400"}`}
+							className={`rounded-lg border bg-slate-950 px-4 py-3 duration-200 hover:border-blue-600 ${type === poison ? "border-blue-600" : "border-blue-400"}`}
 							key={type}
 						>
 							<p className="capitalize">{type.replaceAll("_", " ")}</p>
@@ -98,7 +98,7 @@ export default function Generator({
 					<p className="capitalize">
 						{muscles.length === 0 ? "Select muscle groups" : muscles.join(" ")}
 					</p>
-					<i className="fa-solid fa-caret-down -translate-y-1/2 absolute top-1/2 right-3" />
+					<i className="fa-solid fa-caret-down absolute top-1/2 right-3 -translate-y-1/2" />
 				</button>
 				{showModal && (
 					<div className="flex flex-col px-3 pb-3">
@@ -113,7 +113,7 @@ export default function Generator({
 									}}
 									type="button"
 									key={muscleGroup}
-									className={`duration-200 hover:text-blue-400 ${muscles.includes(muscleGroup) ? " text-blue-400" : ""}`}
+									className={`duration-200 hover:text-blue-400 ${muscles.includes(muscleGroup) ? "text-blue-400" : ""}`}
 								>
 									<p className="uppercase">
 										{muscleGroup.replaceAll("_", " ")}
@@ -137,7 +137,7 @@ export default function Generator({
 							onClick={() => {
 								setGoal(scheme);
 							}}
-							className={`rounded-lg border bg-slate-950 px-4 py-3 duration-200 hover:border-blue-600 ${scheme === goal ? " border-blue-600" : " border-blue-400"}`}
+							className={`rounded-lg border bg-slate-950 px-4 py-3 duration-200 hover:border-blue-600 ${scheme === goal ? "border-blue-600" : "border-blue-400"}`}
 							key={scheme}
 						>
 							<p className="capitalize">{scheme.replaceAll("_", " ")}</p>

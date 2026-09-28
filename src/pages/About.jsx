@@ -32,7 +32,7 @@ function About() {
 					/>
 				</div>
 				<div className="my-8 flex flex-col gap-y-6 md:flex-row lg:justify-around">
-					<div className="flex w-full flex-col ">
+					<div className="flex w-full flex-col">
 						<FaLocationDot className="text-xl" />
 						<p className="w-full font-semibold text-primary text-xl">
 							Bhagalpur
@@ -69,7 +69,7 @@ function About() {
 						<img
 							src="https://avatars.githubusercontent.com/u/71877143?v=4"
 							alt="Ansh Roshan"
-							className=" w-full rounded-full object-cover "
+							className="w-full rounded-full object-cover"
 						/>
 						<p className="mt-6 w-full px-2 font-semibold text-primary text-xl">
 							Ansh Roshan

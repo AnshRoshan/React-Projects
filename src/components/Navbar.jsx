@@ -32,7 +32,7 @@ function Navbar() {
 					<FaReact className="text-3xl" />
 				</span>
 				<Link to="/">
-					<span className="animate-gradient bg-gradient-to-r from-10% from-indigo-500 via-30% via-sky-500 to-90% to-emerald-500 bg-clip-text py-4 text-center font-extrabold text-transparent text-xl md:text-2xl">
+					<span className="animate-gradient bg-linear-to-r from-10% from-indigo-500 via-30% via-sky-500 to-90% to-emerald-500 bg-clip-text py-4 text-center font-extrabold text-transparent text-xl md:text-2xl">
 						React Projects
 					</span>
 				</Link>
@@ -42,7 +42,7 @@ function Navbar() {
 					<li>
 						<Link
 							to="/project"
-							className="font-semibold text-sm hover:underline hover:underline-offset-2 "
+							className="font-semibold text-sm hover:underline hover:underline-offset-2"
 						>
 							Projects
 						</Link>
@@ -50,7 +50,7 @@ function Navbar() {
 					<li>
 						<Link
 							to="/about"
-							className="font-semibold text-sm hover:underline hover:underline-offset-2 "
+							className="font-semibold text-sm hover:underline hover:underline-offset-2"
 						>
 							About
 						</Link>
@@ -58,7 +58,7 @@ function Navbar() {
 					<li>
 						<Link
 							to="/contact"
-							className="font-semibold text-sm hover:underline hover:underline-offset-2 "
+							className="font-semibold text-sm hover:underline hover:underline-offset-2"
 						>
 							Contact
 						</Link>
@@ -68,7 +68,7 @@ function Navbar() {
 			<div className="hidden lg:block">
 				<button
 					type="button"
-					className="rounded-md bg-primary px-3 py-2 font-semibold text-sm text-text shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+					className="rounded-md bg-primary px-3 py-2 font-semibold text-sm text-text shadow-xs hover:bg-primary/80 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-solid focus-visible:outline-offset-2"
 					onClick={toggleTheme}
 				>
 					{isDarkMode ? <FaCloudMoon /> : <FaSun />}
@@ -78,7 +78,7 @@ function Navbar() {
 				{/* onclick to show menu items */}
 				<button
 					type="button"
-					className="rounded-md bg-primary p-2 font-semibold text-2xl text-text shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-offset-2"
+					className="rounded-md bg-primary p-2 font-semibold text-2xl text-text shadow-xs hover:bg-primary/80 focus-visible:outline-2 focus-visible:outline-black focus-visible:outline-solid focus-visible:outline-offset-2"
 					onClick={() => {}}
 				>
 					<IoMenu />

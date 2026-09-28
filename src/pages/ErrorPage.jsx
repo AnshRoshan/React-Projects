@@ -2,11 +2,12 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+
 function ErrorPage() {
 	return (
 		<div className="flex h-screen flex-col">
 			<Navbar />
-			<div className="flex h-screen w-full flex-grow flex-col items-center justify-center space-x-8 space-y-16 lg:flex-row lg:space-y-0 2xl:space-x-0">
+			<div className="flex h-screen w-full grow flex-col items-center justify-center space-x-8 space-y-16 lg:flex-row lg:space-y-0 2xl:space-x-0">
 				<div className="flex w-full flex-col items-center justify-center text-center lg:w-1/2 lg:px-2 xl:px-0">
 					<p className="font-bold text-7xl text-gray-300 tracking-wider md:text-8xl lg:text-9xl">
 						404
@@ -20,7 +21,7 @@ function ErrorPage() {
 
 					<Link
 						to="/"
-						className="flex items-center space-x-2 rounded bg-blue-600 px-4 py-2 text-gray-100 transition duration-150 hover:bg-blue-700"
+						className="flex items-center space-x-2 rounded-sm bg-blue-600 px-4 py-2 text-gray-100 transition duration-150 hover:bg-blue-700"
 					>
 						<IoMdArrowRoundBack />
 						<span>Return Home</span>
