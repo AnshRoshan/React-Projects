@@ -19,7 +19,7 @@ ENV VITE_BASE=/
 RUN pnpm build
 
 # ---------- production stage ----------
-FROM nginx:1.29-alpine AS production
+FROM nginx:1.31-alpine AS production
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/dist /usr/share/nginx/html
